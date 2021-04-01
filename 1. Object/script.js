@@ -19,6 +19,8 @@
 //   },
 // };
 
+// ==============================
+
 // 2. Function Declaration
 
 // Kelemahan teknik ini adalah
@@ -28,37 +30,38 @@
 // untuk menyimpan methodnya, lalu dipanggil.
 // Optimal untuk memori, namun tidak efektif
 
-const methodPlayer = {
-  makan = function (porsi) {
-    this.energi += porsi;
-    console.log(`Halo ${this.nama}, selamat makan!`);
-  },
+// const methodPlayer = {
+//   makan = function (porsi) {
+//     this.energi += porsi;
+//     console.log(`Halo ${this.nama}, selamat makan!`);
+//   },
 
-  main = function (jam) {
-    this.energi -= jam;
-    console.log(`Halo ${this.nama}, selamat bermain!`);
-  },
+//   main = function (jam) {
+//     this.energi -= jam;
+//     console.log(`Halo ${this.nama}, selamat bermain!`);
+//   },
 
-  tidur = function (jam) {
-    this.energi += jam * 2;
-    console.log(`Halo ${this.nama}, selamat tidur!`);
-  }
-}
+//   tidur = function (jam) {
+//     this.energi += jam * 2;
+//     console.log(`Halo ${this.nama}, selamat tidur!`);
+//   }
+// }
 
-function Player(nama, energi) {
-  let player = {};
-  player.nama = nama;
-  player.energi = energi;
-  player.makan = methodPlayer.makan;
-  player.main = methodPlayer.main;
-  player.tidur = methodPlayer.tidur;
+// function Player(nama, energi) {
+//   let player = {};
+//   player.nama = nama;
+//   player.energi = energi;
+//   player.makan = methodPlayer.makan;
+//   player.main = methodPlayer.main;
+//   player.tidur = methodPlayer.tidur;
 
+//   return player;
+// }
 
-  return player;
-}
+// let dias = Player("Dias", 10);
+// let mina = Player("Mina", 20);
 
-let dias = Player("Dias", 10);
-let mina = Player("Mina", 20);
+// ==============================
 
 // 3. Constructor Function
 // keyword new
