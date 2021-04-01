@@ -88,25 +88,52 @@
 
 // 4. Prototype
 
-function Player(nama, energi) {
-  this.nama = nama;
-  this.energi = energi;
+// function Player(nama, energi) {
+//   this.nama = nama;
+//   this.energi = energi;
+// }
+
+// Player.prototype.makan = function (porsi) {
+//   this.energi += porsi;
+//   return `Halo ${this.nama}, selamat makan!`;
+// };
+
+// Player.prototype.main = function (jam) {
+//   this.energi -= jam;
+//   return `Halo ${this.nama}, selamat bermain!`;
+// };
+
+// Player.prototype.tidur = function (jam) {
+//   this.energi += jam * 2;
+//   return `Halo ${this.nama}, selamat tidur!`;
+// };
+
+// let dias = new Player("Dias", 10);
+// let mina = new Player("Mina", 20);
+
+// 5. Prototype (penulisan versi class)
+
+class Player {
+  constructor(nama, energi) {
+    this.nama = nama;
+    this.energi = energi;
+  }
+
+  makan(porsi) {
+    this.energi += porsi;
+    return `Halo ${this.nama}, selamat makan!`;
+  }
+
+  main(jam) {
+    this.energi += jam;
+    return `Halo ${this.nama}, selamat bermain!`;
+  }
+
+  tidur(jam) {
+    this.energi += jam * 2;
+    return `Halo ${this.nama}, selamat tidur!`;
+  }
 }
-
-Player.prototype.makan = function (porsi) {
-  this.energi += porsi;
-  return `Halo ${this.nama}, selamat makan!`;
-};
-
-Player.prototype.main = function (jam) {
-  this.energi -= jam;
-  return `Halo ${this.nama}, selamat bermain!`;
-};
-
-Player.prototype.tidur = function (jam) {
-  this.energi += jam * 2;
-  return `Halo ${this.nama}, selamat tidur!`;
-};
 
 let dias = new Player("Dias", 10);
 let mina = new Player("Mina", 20);
