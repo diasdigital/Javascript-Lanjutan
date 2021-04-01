@@ -21,6 +21,13 @@
 
 // 2. Function Declaration
 
+// Kelemahan teknik ini adalah
+// kita memasukan template kedalam memori
+// setiap kali membuat objek.
+// Bisa ditangani dengan membuat objek baru
+// untuk menyimpan methodnya, lalu dipanggil.
+// Optimal untuk memori, namun tidak efektif
+
 const methodPlayer = {
   makan = function (porsi) {
     this.energi += porsi;
