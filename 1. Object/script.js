@@ -19,7 +19,7 @@
 //   },
 // };
 
-// ==============================
+// ============================================================
 
 // 2. Function Declaration
 
@@ -61,7 +61,7 @@
 // let dias = Player("Dias", 10);
 // let mina = Player("Mina", 20);
 
-// ==============================
+// ============================================================
 
 // 3. Constructor Function
 // keyword new
@@ -83,3 +83,30 @@
 
 // let dias = new Player("Dias", 10);
 // let mina = new Player("Mina", 20);
+
+// ============================================================
+
+// 4. Prototype
+
+function Player(nama, energi) {
+  this.nama = nama;
+  this.energi = energi;
+}
+
+Player.prototype.makan = function (porsi) {
+  this.energi += porsi;
+  return `Halo ${this.nama}, selamat makan!`;
+};
+
+Player.prototype.main = function (jam) {
+  this.energi -= jam;
+  return `Halo ${this.nama}, selamat bermain!`;
+};
+
+Player.prototype.tidur = function (jam) {
+  this.energi += jam * 2;
+  return `Halo ${this.nama}, selamat tidur!`;
+};
+
+let dias = new Player("Dias", 10);
+let mina = new Player("Mina", 20);
