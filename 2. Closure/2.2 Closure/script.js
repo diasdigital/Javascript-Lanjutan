@@ -30,21 +30,36 @@
 // ==================================================
 // Contoh Factory Function
 
-function ucapkanSalam(waktu) {
-  return function (nama) {
-    console.log(`Halo ${nama}, Selamat ${waktu}, semoga harimu menyenangkan!`);
-  };
-}
+// function ucapkanSalam(waktu) {
+//   return function (nama) {
+//     console.log(`Halo ${nama}, Selamat ${waktu}, semoga harimu menyenangkan!`);
+//   };
+// }
 
-let selamatPagi = ucapkanSalam("Pagi");
-let selamatSiang = ucapkanSalam("Siang");
-let selamatMalam = ucapkanSalam("Malam");
+// let selamatPagi = ucapkanSalam("Pagi");
+// let selamatSiang = ucapkanSalam("Siang");
+// let selamatMalam = ucapkanSalam("Malam");
 
-selamatPagi("Nayeon");
-selamatMalam("Jihyo");
+// selamatPagi("Nayeon");
+// selamatMalam("Jihyo");
 
 // kita memanggil function ucapkanSalam, mengirim argumen yaitu pagi, siang, atau malam
 // function tersebut akan mengembalikan sebuah function lagi yang kita simpan kedalam variabel
 // ketika kita memanggil function yang sudah dimasukan kedalam variabel tadi, kita mengirim argumen berupa nama
 // sehingga nama akan terisi oleh parameternya inner function
 // sedangkan waktu akan terisi oleh parameternya outer function dengan lexical scope
+
+// ==================================================
+// dengan closure, kita bisa membuat sebuah "private method/variabel"
+
+let counter = 0;
+let add = function () {
+  // ini bikin function dengan cara Function Expression
+  return ++counter;
+};
+
+console.log(add());
+console.log(add());
+console.log(add());
+console.log(add());
+console.log(add());
