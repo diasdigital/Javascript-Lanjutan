@@ -7,3 +7,6 @@ function init() {
 }
 
 init();
+
+// lexical scope adalah ketika sebuah function didalam function mencari sebuah variabel di parent nya
+// ini juga membuat function itu menjadi closure
