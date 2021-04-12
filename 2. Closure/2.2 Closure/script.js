@@ -52,14 +52,15 @@
 // ==================================================
 // dengan closure, kita bisa membuat sebuah "private method/variabel"
 
-let counter = 0;
+// ini bikin function dengan cara Function Expression
 let add = function () {
-  // ini bikin function dengan cara Function Expression
-  return ++counter;
+  let counter = 0;
+  return function () {
+    return ++counter;
+  };
 };
 
-console.log(add());
-console.log(add());
-console.log(add());
-console.log(add());
-console.log(add());
+let a = add();
+
+console.log(a());
+console.log(a());
