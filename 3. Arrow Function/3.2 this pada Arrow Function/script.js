@@ -85,7 +85,14 @@
 
 const box = document.querySelector(".box");
 box.addEventListener("click", function () {
-  this.classList.toggle("size");
+  let satu = "size";
+  let dua = "caption";
+
+  if (this.classList.contains(satu)) {
+    [satu, dua] = [dua, satu];
+  }
+
+  this.classList.toggle(satu);
   // setTimeout(function () {
   //   // this.classList.toggle("caption");
   //   console.log(this);
@@ -98,6 +105,6 @@ box.addEventListener("click", function () {
   // jadi kita akan menggunakan arrow function
 
   setTimeout(() => {
-    this.classList.toggle("caption");
+    this.classList.toggle(dua);
   }, 600);
 });
