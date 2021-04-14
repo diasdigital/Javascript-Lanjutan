@@ -25,13 +25,13 @@
 // ------------------------------
 // Object Literal
 
-const siswa1 = {
-  nama: "Jihyo",
-  umur: 24,
-  sayHello: () => {
-    console.log(`Halo nama saya ${this.nama}, dan saya ${this.umur} tahun`);
-  },
-};
+// const siswa1 = {
+//   nama: "Jihyo",
+//   umur: 24,
+//   sayHello: () => {
+//     console.log(`Halo nama saya ${this.nama}, dan saya ${this.umur} tahun`);
+//   },
+// };
 
 // Catatan
 // Arrow Function tidak memiliki this
@@ -43,3 +43,33 @@ const siswa1 = {
 // ketika salah satu method yang menggunakan arrow function tidak bisa menemukan this yang dipanggil
 // maka ia akan mencari ke atas
 // dan di atas, alias di constructor functionnya, ada variabel this
+
+// ==============================
+
+const Siswa = function () {
+  this.nama = "Jeongyeon";
+  this.umur = 25;
+  this.sayHello = () => {
+    console.log(`Halo nama saya ${this.nama}, dan saya ${this.umur} tahun`);
+  };
+
+  // setInterval(function () {
+  //   console.log(this.umur++);
+  // }, 1000);
+
+  // penjelasan contoh diatas
+  // jika, misalnya, kita menggunakan setInterval
+  // lalu kita menggunakan function declaration
+  // maka function itu akan dihoisting
+  // sehingga this yang dimaksud ada di global
+  // cara mengatasinya yaitu dengan arrow function
+
+  setInterval(() => {
+    console.log(this.umur++);
+  }, 1000);
+
+  // karena arrow function tidak memiliki konsep this
+  // maka ia akan mencari ke lexical scopenya
+  // bukan ke global
+};
+const jeongyeon = new Siswa();
