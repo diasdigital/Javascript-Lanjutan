@@ -74,5 +74,30 @@
 // };
 // const jeongyeon = new Siswa();
 
+//
+//
+//
+//
+//
 // ==============================
 // Contoh penggunakan real dari arrow function
+// dengan DOM selection
+
+const box = document.querySelector(".box");
+box.addEventListener("click", function () {
+  this.classList.toggle("size");
+  // setTimeout(function () {
+  //   // this.classList.toggle("caption");
+  //   console.log(this);
+  // }, 600);
+
+  // sama seperti yang setInterval
+  // function tersebut akan dihoisting
+  // sehingga this yang dimaksud adalah window di global
+  // seharusnya saat di console.log(this), dia berisi elemen box
+  // jadi kita akan menggunakan arrow function
+
+  setTimeout(() => {
+    this.classList.toggle("caption");
+  }, 600);
+});
