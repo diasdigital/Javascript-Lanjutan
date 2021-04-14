@@ -46,30 +46,33 @@
 
 // ==============================
 
-const Siswa = function () {
-  this.nama = "Jeongyeon";
-  this.umur = 25;
-  this.sayHello = () => {
-    console.log(`Halo nama saya ${this.nama}, dan saya ${this.umur} tahun`);
-  };
+// const Siswa = function () {
+//   this.nama = "Jeongyeon";
+//   this.umur = 25;
+//   this.sayHello = () => {
+//     console.log(`Halo nama saya ${this.nama}, dan saya ${this.umur} tahun`);
+//   };
 
-  // setInterval(function () {
-  //   console.log(this.umur++);
-  // }, 1000);
+//   // setInterval(function () {
+//   //   console.log(this.umur++);
+//   // }, 1000);
 
-  // penjelasan contoh diatas
-  // jika, misalnya, kita menggunakan setInterval
-  // lalu kita menggunakan function declaration
-  // maka function itu akan dihoisting
-  // sehingga this yang dimaksud ada di global
-  // cara mengatasinya yaitu dengan arrow function
+//   // penjelasan contoh diatas
+//   // jika, misalnya, kita menggunakan setInterval
+//   // lalu kita menggunakan function declaration
+//   // maka function itu akan dihoisting
+//   // sehingga this yang dimaksud ada di global
+//   // cara mengatasinya yaitu dengan arrow function
 
-  setInterval(() => {
-    console.log(this.umur++);
-  }, 1000);
+//   setInterval(() => {
+//     console.log(this.umur++);
+//   }, 1000);
 
-  // karena arrow function tidak memiliki konsep this
-  // maka ia akan mencari ke lexical scopenya
-  // bukan ke global
-};
-const jeongyeon = new Siswa();
+//   // karena arrow function tidak memiliki konsep this
+//   // maka ia akan mencari ke lexical scopenya
+//   // bukan ke global
+// };
+// const jeongyeon = new Siswa();
+
+// ==============================
+// Contoh penggunakan real dari arrow function
