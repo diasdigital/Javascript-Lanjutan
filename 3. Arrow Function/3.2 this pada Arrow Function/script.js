@@ -85,7 +85,20 @@
 
 const box = document.querySelector(".box");
 box.addEventListener("click", function () {
-  this.classList.toggle("size");
+  let satu = "size";
+  let dua = "caption";
+  this.classList.toggle(satu);
+
+  if (this.classList.contains(satu)) {
+    [satu, dua] = [dua, satu];
+  }
+
+  // if diatas berfungsi untuk memeriksa
+  // apakah didalam elemen sudah ada class pengubah
+  // jika sudah ada, maka balik posisinya sehingga
+  // urutan transisinya sesuai
+  // size lalu caption diawal, caption lalu size diakhir
+
   // setTimeout(function () {
   //   // this.classList.toggle("caption");
   //   console.log(this);
@@ -98,6 +111,6 @@ box.addEventListener("click", function () {
   // jadi kita akan menggunakan arrow function
 
   setTimeout(() => {
-    this.classList.toggle("caption");
+    this.classList.toggle(dua);
   }, 600);
 });
